@@ -9,9 +9,11 @@ class Thing(models.Model):
         max_length=30
     )
     description = models.CharField(
-        max_length=120
+        max_length=120,
+        blank=True,
+        unique=False,
     )
     quantity = models.IntegerField(
-        default=0,
+        unique=False,
         validators=[MaxValueValidator(100), MinValueValidator(0)]
     )
